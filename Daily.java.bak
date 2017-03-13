@@ -1,0 +1,13 @@
+public class Daily{
+	// instance Variable
+	private int workday;
+	private int dailypay; 
+
+	// main method
+	public static void main(String[] args) {
+		
+		// local Variable
+
+
+	}
+}

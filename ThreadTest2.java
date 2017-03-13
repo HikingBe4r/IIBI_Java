@@ -1,0 +1,22 @@
+
+public class ThreadTest2 {
+	public static void main(String[] args) {
+		// Enum Thread.State
+
+		// 1. NEW
+		NumberThread thread1 = new NumberThread();
+		//AlphabetThread thread2 = new AlphabetThread(new AlphabetRunnable(), "alphabet-thread");
+		Thread thread2 = new Thread(new AlphabetRunnable(), "alphabet-thread");
+
+		System.out.println("넘버쓰레드 우선순위: " + thread1.getPriority());
+		System.out.println("알파벳쓰레드 우선순위: " + thread2.getPriority());
+		System.out.println("메인쓰레드 우선순위: " + new Thread().currentThread().getPriority());
+
+		// 2. RUNNABLE
+		thread1.start();
+		thread2.start();
+
+		System.out.println("다음쓰레드가 종료됐습니다.  " + new Thread().currentThread().getName());
+
+	}
+}

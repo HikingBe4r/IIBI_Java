@@ -1,0 +1,17 @@
+/*	Obj: 
+	
+*/
+public class ArticleTest1{
+	// main method
+	public static void main(String[] args) {
+		// local Variable
+
+		Article article1 = new Article();
+		Article article2 = new Article("±è±è±è", "±èÁ¦¸ñ", "±è³»¿ë");
+		Article article3 = new Article("µÑµÑµÑ", "µÑÁ¦¸ñ", "µÑ³»¿ë");
+
+		System.out.println(article1.getArticleInfo());
+		System.out.println(article3.getArticleInfo());
+		System.out.println(article2.getArticleInfo());
+	}
+}

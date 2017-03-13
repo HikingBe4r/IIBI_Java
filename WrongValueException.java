@@ -1,0 +1,11 @@
+// Checked Exception
+
+public class WrongValueException extends Exception {
+
+	// »ý¼ºÀÚ
+	public WrongValueException() {};
+
+	public WrongValueException(String msg) {
+		super(msg);
+	}
+}

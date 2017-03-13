@@ -1,0 +1,46 @@
+/*	Obj: 
+1
+2
+3
+4
+5
+를 출력하시오. for while do~while
+	
+*/
+
+//import, Package
+
+public class Sub5{
+	// Global variable
+
+	// main method
+	public static void main(String[] args) {
+		
+		// Local variable
+		
+		// for
+		for(int i = 1; i <= 5; i++) {
+			System.out.printf("%d\n", i);
+		}
+
+		System.out.println("-----------------------------");
+
+		// while
+		int _while = 1;
+		while (_while <= 5) {
+			System.out.printf("%d\n", _while);
+			_while++;
+		}
+
+		System.out.println("-----------------------------");
+
+		// do~while
+		int _dowhile = 1;
+		do {
+			System.out.printf("%d\n", _dowhile);
+			_dowhile++;
+
+		} while(_dowhile <= 5);
+
+	}
+}

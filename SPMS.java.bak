@@ -1,0 +1,15 @@
+/*	切积 己利包府 矫胶袍 (Student performance management system)
+
+
+*/
+public class SPMS {
+	public static void main(String[] args) {
+		
+	}
+
+	public static void menuPrint() {
+		System.out.printf("========切积 己利包府 矫胶袍=========\n");
+		System.out.printf("1. 切积 己利殿废\n");
+		System.out.printf("2.锅龋喊 切积己利 炼雀\n");
+	}
+}

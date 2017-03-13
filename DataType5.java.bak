@@ -1,0 +1,12 @@
+// 실수형에 대한 예제
+
+public class DataType5 {
+	public static void main(String[] args) {
+		//변수선언 및 초기화
+		float num1 = 1234.5678f;	// 4.5f: float literal
+		double num2 = 1234.5678;  // 4.5: double literal
+
+		System.out.printf("num1: %.4f, num2: %.4f%n", num1, num2);	// 실수형을 표현하려면 double이나 float이나 %f다. default는 소수점이하 6자리
+
+	}
+}

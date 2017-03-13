@@ -1,0 +1,26 @@
+/*	Obj: 
+	
+*/
+
+//import, Package
+
+public class ArrayTest5{
+	// Global variable
+
+	// main method
+	public static void main(String[] args) {
+		
+		// Local variable
+		int[] score = new int[]{100,90,80,70,60};
+
+		for(int i = 0; i < score.length; i++) {
+			System.out.printf("%d\n", score[i]);
+		}
+ 
+		System.out.printf("=====================\n");
+
+		for(int j: score) {
+			System.out.printf("%d\n", j);
+		}
+	}
+}

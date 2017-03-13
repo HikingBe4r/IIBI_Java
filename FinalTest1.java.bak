@@ -1,0 +1,13 @@
+
+public class FinalTest1{
+
+	static final int a = 10;
+	final static int b = 10;
+
+	public static void main(String[] args) {
+		final int num = 5;
+
+		System.out.printf("a: %d, b: %d\n", a, b);
+		
+	}
+}

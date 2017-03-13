@@ -1,0 +1,24 @@
+/*	Obj: 
+	
+*/
+
+//import, Package
+
+public class ArrayTest1{
+	// Global variable
+
+	// main method
+	public static void main(String[] args) {
+		
+		// Local variable
+		int studentNum = 9;
+		int[] score = new int[studentNum];
+
+		// init array가 필요가없네..?
+		for(int i = 0; i < studentNum; i++) {
+			//score[i] = i*10;
+			System.out.printf("hashcode: %s\tscore[%d]: %d\n", score, i, score[i]);
+		}
+		System.out.printf("배열의 길이: %d\n", score.length);
+	}
+}

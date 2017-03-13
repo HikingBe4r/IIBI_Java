@@ -1,0 +1,12 @@
+import util.java.*;
+
+public class NoComparator implements Comparator<Article>{
+
+	// 게시글 번호 내림차순 정리
+	public int compare(Article a, Article b) {
+
+
+	}
+
+
+}

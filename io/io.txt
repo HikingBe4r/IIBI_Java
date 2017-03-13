@@ -1,0 +1,28 @@
+<io.txt>
+abcdefghijklmnopqrstuvwxyz
+
+<보기편하려고 5개씩 끊음>
+abcde
+fghij
+klmno
+pqrst
+uvwxy
+z
+
+<출력> - char[20]
+abcdefghijklmnopqrst + 
+uvwxyzghijklmnopqrst
+
+
+
+<초기화> - char[20]인데 초기화를 시켜줌.
+
+abcdefghijklmnopqrst + 
+uvwxyz00000000000000 
+
+
+
+<no 초기화> char[10]인데 no초기화
+abcdefghij +
+klmnopqrst +
+uvwxyzqrst	// 총 30개 출력.

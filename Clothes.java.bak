@@ -1,0 +1,99 @@
+public class Clothes{
+	enum Season {
+		SPRING, SUMMER, FALL, WINTER;
+
+		Season() {
+		}
+	}
+
+	enum Size {
+		XS, S, M, L, XL, XXL
+	}
+
+	private String title;
+	private String material;
+	private Season season;
+	private Size size;
+
+	public Clothes() {
+		
+	}
+
+	public Clothes(String title, String material, Season season, Size size) {
+		this.title = title;
+		this.material = material;
+		this.season = season;
+		this.size = size;
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+	public String getMaterial() {
+		return this.material;
+	}
+	public Season getSeason() {
+		return this.season;
+	}
+	public Size getSize() {
+		return size;
+	}
+	public String toString() {
+		return "title: " + title + ", material: " + material + ", season: " + season + ", size: " + size;
+	}
+	public void setSeason(Season season) {
+		this.season = season;
+	}
+	public void setSize(Size size) {
+		this.size = size;
+	}
+
+	public static void main (String[] args) {
+
+/*
+		Season temp = Season.FALL;
+		System.out.println(temp.name());
+		System.out.println(temp.ordinal());
+
+		Season season = Enum.valueOf(Season.class, "SUMMER");
+		// Season season = Season.valueOf("SUMMER"); À§¿Í °°Àº ÄÚµå
+		System.out.println(season.name());
+		System.out.println(season.ordinal());
+
+
+		Season[] seasons = Season.values();
+		for(Season s: seasons) {
+			System.out.println(s.name());
+			System.out.println(s.ordinal());
+		}
+*/
+
+		Clothes cloth = new Clothes("T-shirts", "Cotton", Season.SUMMER, Size.L);
+		System.out.printf("%s\n", cloth);
+
+		// º½À¸·Î º¯°æ
+		cloth.setSeason(Season.SPRING);
+
+		// ¿Ê¿¡´ëÇÑ °èÀýÁ¤º¸ Ãâ·Â
+		switch(cloth.getSeason()) {
+			case SPRING:
+				System.out.println("º½¿Ê");
+				break;
+			case SUMMER:
+				System.out.println("¿©¸§¿Ê");
+				break;
+			case FALL:
+				System.out.println("°¡À»¿Ê");
+				break;
+			case WINTER:
+				System.out.println("°Ü¿ï¿Ê");
+				break;
+			default:
+				break;
+		}
+
+
+
+
+	}
+}

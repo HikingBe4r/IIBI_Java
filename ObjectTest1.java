@@ -1,0 +1,11 @@
+public class ObjectTest1 {
+	public static void main(String[] args) {
+		Account account1 = new Account("1", "1ȣ", "1111", "2017.01.01", 1000);
+		Account account2 = new Account("1", "1ȣ", "1111", "2017.01.01", 1000);
+		
+		Car car = new Car();
+
+		boolean result = account1.equals(account2);
+		System.out.printf("result: %b\n", result);
+	}
+}

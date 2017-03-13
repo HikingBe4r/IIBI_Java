@@ -1,0 +1,164 @@
+import java.util.*;
+
+public class ContactMgr{
+						// 이름, 주소록
+	private static HashMap<String, Contact> map = new HashMap<String, Contact>();
+	
+	// 연락처 등록
+	public static void registerContact() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("이름:\t");		
+		String name = sc.nextLine();
+
+		System.out.print("번호:\t");	
+		String phone = sc.nextLine();
+
+		System.out.print("메일:\t");		
+		String email = sc.nextLine();
+
+		Contact contact = new Contact(name, phone, email);
+
+		if(!map.containsKey(name)) {
+			map.put(contact.getName(), contact);
+		}
+		else {
+			System.out.println("중복");
+			return;
+		}
+		
+		System.out.println("등록되었습니다.");
+	}
+
+
+	// 전체 연락처 정보를 조회하다.
+	public static void retrieveContacts() {
+
+		if(map.isEmpty()) {
+			System.out.println("등록된 정보가 없습니다");
+		} else {
+
+				System.out.printf("이름\t번호\t메일\n");
+
+			for(Contact c: map.values()) {
+				System.out.printf("%s\n", c);
+			}
+		}
+	}
+
+	// 연락처 정보를 검색하다/
+	public static void findContact() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("검색할 이름: ");
+		String name = sc.nextLine();
+
+		if(map.containsKey(name)) {
+			System.out.printf("%s\n", map.get(name));
+		} else {
+			System.out.println("존재하지 않는 이름입니다.");
+		}
+	}
+	
+
+	// 연락처 정보를 삭제한다.
+	public static void removeContact() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("삭제할 이름: ");
+		String name = sc.nextLine();
+
+		if(map.containsKey(name)) {
+			map.remove(name);
+			System.out.println("삭제하였습니다.");
+		} else {
+			System.out.println("존재하지 않는 이름입니다.");
+		}
+	}
+
+	// 연락처 정보를 변경하다
+	public static void modifyContact() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("변경할 이름: ");
+		String name = sc.nextLine();
+
+		if(map.containsKey(name)) {
+			System.out.print("변경할 정보를 선택하세요.\n [1. 번호변경, 2. 메일변경, 3. 종료] : ");
+			int a = Integer.parseInt(sc.nextLine());
+			switch (a) {
+				case 1:
+					// 1. 번호변경
+					System.out.print("변경할 번호: ");
+					String phone = sc.nextLine();
+					map.replace(name, new Contact(name, phone, map.get(name).getEmail()));
+					break;
+				case 2:
+					// 2. 메일변경
+					System.out.print("변경할 메일: ");
+					String email = sc.nextLine();
+					map.replace(name, new Contact(name, map.get(name).getPhone(), email));
+					break;
+				case 3:
+					// 종료
+					return;
+				default:
+					System.out.println("다시 입력해주세요.");
+					break;
+			}
+
+			System.out.println("변경이 완료되었습니다.");
+		} else {
+			System.out.println("존재하지 않는 이름입니다.");
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		while(true) {
+			System.out.print ("\n====전화번호부 프로그램====\n" + 
+								 "1. 연락처 등록\n"+
+								 "2. 연락처 검색\n"+
+								 "3. 연락처 변경\n"+
+								 "4. 연락처 삭제\n"+
+								 "5. 전체 연락처 조회\n"+
+								 "6. 종료\n"+
+								 "메뉴를 선택하세요: ");
+
+			int i = sc.nextInt();
+
+			System.out.println();
+
+
+			switch (i) {
+				case 1:
+					// 1. 연락처 등록
+					registerContact();
+					break;
+				case 2:
+					// 2. 연락처 검색
+					findContact();
+					break;
+				case 3:
+					// 3. 연락처 변경
+					modifyContact();
+					break;
+				case 4:
+					// 4. 연락처 삭제
+					removeContact();
+					break;
+				case 5:
+					// 5. 전체 연락처 조회
+					retrieveContacts();
+					break;
+				case 6:
+					// 6. 종료
+					return;
+				default:
+					// 다시 입력하세요.
+					break;
+
+				
+			}
+		}
+
+	}
+}

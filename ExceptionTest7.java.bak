@@ -1,0 +1,26 @@
+import java.io.*;
+
+public class ExceptionTest7{
+	public static void main(String[] args) {
+		FileReader fr = null;
+
+		try {
+			String filename = "C:/KSH/io/io1.txt";
+			fr = new FileReader(filename);
+			
+			char[] cbuf = new char[256];
+			int readChar = 0;
+			while((readChar = fr.read(cbuf)) != -1) {
+				System.out.printf("%s", new String(cbuf, 0, readChar));			
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				fr.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

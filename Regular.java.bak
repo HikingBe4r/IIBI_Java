@@ -1,0 +1,12 @@
+public class Regular{
+	// instance Variable
+	private int salary;
+
+	// main method
+	public static void main(String[] args) {
+		
+		// local Variable
+
+
+	}
+}

@@ -1,0 +1,38 @@
+// Switch~Case¹®
+
+public class SwitchTest1{
+
+	// main method
+	public static void main(String[] args) {
+		
+		// initialize variable
+		String color = "red";
+		switch(color) {
+			case "red":
+				System.out.println("red");
+				break;
+			case "green":
+				System.out.println("green");
+				break;
+			case "blue":
+				System.out.println("blue");
+				break;
+			case "cyon":
+				System.out.println("cyon");
+				break;
+			case "magenta":
+				System.out.println("magenta");
+				break;
+			case "yellow":
+				System.out.println("yellow");
+				break;
+			case "black":
+				System.out.println("black");
+				break;
+			default:
+				System.out.println("RGB CMYK");
+				break;
+		}
+
+	}
+}

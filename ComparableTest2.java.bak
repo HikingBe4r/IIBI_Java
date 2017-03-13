@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class ComparableTest2{
+
+	public static void main(String[] args) {
+		
+		ArrayList<Book> books = new ArrayList<Book>();
+		books.add(new Book(1, "1", "1", 10000, 1));
+		books.add(new Book(5, "55555", "55555", 50000, 5));
+		books.add(new Book(4, "4444", "4444", 40000, 4));
+		books.add(new Book(2, "22", "22", 20000, 2));
+		books.add(new Book(3, "333", "333", 30000, 3));
+
+		// 출력
+		for(Book b: books) {
+			System.out.println(b);
+		}
+		System.out.println();
+
+
+		// 도서번호 오름차순 정렬
+		Collections.sort(books);
+
+
+		System.out.println("정렬후");
+
+
+		for(Book b: books) {
+			System.out.println(b);
+		}
+		System.out.println();
+
+		
+	}
+}

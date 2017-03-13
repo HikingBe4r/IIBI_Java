@@ -1,0 +1,38 @@
+/*	Obj: 이름을 계속 입력받다가 quit를 입력받으면 종료하는 반복문
+			do while로 만들거라.
+	
+*/
+
+//import, Package
+
+import java.util.Scanner;
+
+public class DoWhileTest2{
+	// Global variable
+
+	// main method
+	public static void main(String[] args) {
+		
+		// Local variable
+		Scanner scan = new Scanner(System.in);
+		String input;
+
+		do {
+			System.out.println("이름을 입력하세요. [종료: quit]");
+
+			input = scan.nextLine();
+			
+			if(input.equals("quit")) {
+				System.out.println("quit를 입력하셨습니다.");
+				break;
+			}
+
+			System.out.printf("이름은 %s입니다.%n", input);
+			
+		
+		} while(!input.equals("quit"));
+		
+
+
+	}
+}

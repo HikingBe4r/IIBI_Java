@@ -1,0 +1,51 @@
+// static inner≈¨∑°Ω∫
+
+class OuterClass {
+	private int num1 = 5;
+	private static int num2 = 10;
+	
+	public int getNum() {
+		return num1;
+	}
+
+	public void printOuter() {
+		System.out.println("num1: "+ num1);
+		System.out.println("num2: "+ num2);
+		System.out.println("num3: "+ new InnerClass().num3);
+		System.out.println("num4: "+ InnerClass.num4);
+	}
+
+	static class InnerClass {
+
+		 num2 = 200;
+		private int num3 = 15;
+		private static int num4 = 20;
+
+		public InnerClass() {
+		
+		}
+
+		public void printInnerClass() {
+
+			System.out.println("num1: "+ new OuterClass().num1);
+			System.out.println("num2: "+ num2);
+			System.out.println("num3: "+ num3);
+			System.out.println("num4: "+ num4);
+		}
+	
+	}
+}
+public class NestedClassTest2{
+
+	public static void main(String[] args) {
+		OuterClass o = new OuterClass();
+		OuterClass.InnerClass i = new OuterClass.InnerClass();
+		
+		o.printOuter();
+
+		i.printInnerClass();
+
+		//i.printInnerClass();
+
+	}
+}

@@ -1,0 +1,14 @@
+package a;
+
+public class A{
+	protected int num;
+
+	public A() {}
+	public A(int num) {
+		this.num = num;
+	}
+
+	public int getNum() {
+		return num;
+	}
+}

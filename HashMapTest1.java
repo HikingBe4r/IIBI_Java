@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class HashMapTest1{
+	public static void main(String[] args) {
+		// java, oracle, jsp를 1, 2, 3에 추가
+		// hashmap
+
+		HashMap<Integer, String> hash = new HashMap<Integer, String>();
+
+		hash.put(1, "java");
+		hash.put(2, "oracle");
+		hash.put(3, "jsp");
+		hash.put(2, "android");
+
+		hash.replace(4, "aa");
+
+
+//		for(int i = 1; i <= hash.size(); i++) {
+//			System.out.printf("%d: %s\n", i, hash.get(i));
+//		}
+
+//		System.out.printf("4:  %s\n", hash.get(4));
+
+//		System.out.printf("\n%s\n\n", hash.keySet());
+//		System.out.printf("%s\n", hash.values());
+/*
+		for(String str: hash.values()) {
+			System.out.printf("%s\n", str);
+		}
+*/
+
+		for(int i: hash.keySet() ) {
+			System.out.printf("%s\n", hash.get(i));
+		}
+	}
+}

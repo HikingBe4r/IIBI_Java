@@ -1,0 +1,34 @@
+// src/io.txt -> dest/io.txt
+// 입력: FileReader
+// 출력: FileWriter
+import java.io.*;
+
+public class CopyTest3{
+	public static void main(String[] args) {
+		FileReader fr = null;
+		FileWriter fw = null;
+
+		try {
+			fr = new FileReader("C:/KSH/src/io.txt");
+			fw = new FileWriter("C:/KSH/dest/io.txt");
+
+			char[] c = new char[512];
+			int index = 0;
+			while((index = fr.read(c)) != null) {
+				fw.write(c, 0, index);
+			}
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(fr != null) fr.close();
+				if(fw != null) fw.close();
+		
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+}

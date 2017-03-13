@@ -1,0 +1,55 @@
+// 1~100 까지 정수의 합계
+// 1~50 합계 스레드 & 51~100 합계 스레드
+class TotalThread extends Thread {
+	private int start;
+	private int end;
+	private int sum;
+
+	TotalThread(String threadName, int start, int end) {
+		super(threadName);
+		this.start = start;
+		this.end = end;
+	}
+
+	public void run() {
+		for(int i = start; i <= end; i++) {
+			System.out.printf("%s, %d번째\n", getName(), i);
+			sum += i;
+
+			try {
+				sleep(10);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public int getSum() {
+		return sum;
+	}
+}
+
+public class ThreadTest5{
+
+	public static void main(String[] args) {
+
+		// 1. NEW
+		TotalThread thread1 = new TotalThread("1~50 thread", 1, 50);
+		TotalThread thread2 = new TotalThread("51~100 thread", 51, 150);
+
+		// 2. RUNNING
+		thread1.start();
+		thread2.start();
+		
+		try {
+			thread1.join();
+			thread2.join();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		int total = thread1.getSum() + thread2.getSum();
+		System.out.println(total);
+
+	}
+}

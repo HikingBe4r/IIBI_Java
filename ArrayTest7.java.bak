@@ -1,0 +1,21 @@
+/*	Obj: 1Â÷¿ø¹è¿­ Ãâ·Â-> Çâ»óµÈ for¹®
+	
+*/
+
+//import, Package
+
+public class ArrayTest7{
+	// Global variable
+
+	// main method
+	public static void main(String[] args) {
+		
+		// Local variable
+		String[] grade = {"ÀÏÀÌ", "»ï»ç", "¿À·ú", "Ä¥ÆÈ", "¾ÆÈ©°ø"};
+
+		for(String str: grade) {
+			System.out.printf("%s\n", str);
+		}
+
+	}
+}

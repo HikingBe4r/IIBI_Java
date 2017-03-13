@@ -1,0 +1,9 @@
+// Primitive Data Type 정수형에 대한 예제
+public class DataType1 {
+	public static void main(String[] args) {
+		// 변수 선언 및 초기화
+		byte num1 = 200;
+		
+		System.out.println("num1: "+ num1);
+	}
+}
